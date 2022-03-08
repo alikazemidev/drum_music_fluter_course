@@ -1,16 +1,14 @@
 # drum_music
 
 A new Flutter project.
+this project is from amirahmad adibi course 
+it`s a app you can play 6 sound with press btn 
 
-## Getting Started
+in this app i use audioPlayers package 
+https://pub.dev/packages/audioplayers
 
-This project is a starting point for a Flutter application.
+picture of app 
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Android Emulator - Pixel_4_XL_API_30_5554 3_9_2022 12_37_55 AM](https://user-images.githubusercontent.com/83006657/157326101-03d760bc-1917-4947-940e-95d23470a1a2.png)
+![Android Emulator - Pixel_4_XL_API_30_5554 3_9_2022 12_37_45 AM](https://user-images.githubusercontent.com/83006657/157326117-28acd355-2130-4dd5-a9ad-976b9d66588c.png)
