@@ -5,14 +5,43 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool isDarkMode = false;
+
+  void playSound(String sound) {
+    AudioCache player = AudioCache();
+    player.play(sound);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark(),
+      theme: isDarkMode ? ThemeData.dark() : ThemeData.light(),
       home: Scaffold(
         appBar: AppBar(
-          title: Text('drum music'),
+          backgroundColor: isDarkMode ? Colors.black : Colors.red,
+          title: Text('Drum Music'),
+          actions: [
+            isDarkMode
+                ? Align(
+                    alignment: Alignment.center,
+                    child: Text('Dark Mode'),
+                  )
+                : Text(''),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  isDarkMode = !isDarkMode;
+                });
+              },
+              icon: Icon(Icons.dark_mode),
+            ),
+          ],
         ),
         body: DecoratedBox(
           position: DecorationPosition.background,
@@ -21,9 +50,7 @@ class MyApp extends StatelessWidget {
               image: AssetImage('images/drum.png'),
             ),
           ),
-          child: Container(
-            child: getBody(),
-          ),
+          child: getBody(),
         ),
       ),
     );
@@ -34,13 +61,12 @@ class MyApp extends StatelessWidget {
       children: [
         Expanded(
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    AudioCache player = AudioCache();
-                    player.play('c1.wav');
+                    playSound('c1.wav');
                   },
                   child: Container(),
                 ),
@@ -48,8 +74,7 @@ class MyApp extends StatelessWidget {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    AudioCache player = AudioCache();
-                    player.play('c2.wav');
+                    playSound('c2.wav');
                   },
                   child: Container(),
                 ),
@@ -64,8 +89,7 @@ class MyApp extends StatelessWidget {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    AudioCache player = AudioCache();
-                    player.play('h1.wav');
+                    playSound('h1.wav');
                   },
                   child: Container(),
                 ),
@@ -73,8 +97,7 @@ class MyApp extends StatelessWidget {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    AudioCache player = AudioCache();
-                    player.play('h2.wav');
+                    playSound('h2.wav');
                   },
                   child: Container(),
                 ),
@@ -89,8 +112,7 @@ class MyApp extends StatelessWidget {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    AudioCache player = AudioCache();
-                    player.play('k1.wav');
+                    playSound('k1.wav');
                   },
                   child: Container(),
                 ),
@@ -98,8 +120,7 @@ class MyApp extends StatelessWidget {
               Expanded(
                 child: TextButton(
                   onPressed: () {
-                    AudioCache player = AudioCache();
-                    player.play('k2.wav');
+                    playSound('k2.wav');
                   },
                   child: Container(),
                 ),
