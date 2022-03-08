@@ -1,10 +1,10 @@
 # drum_music
 
 A new Flutter project.
-this project is from amirahmad adibi course 
-it`s a app you can play 6 sound with press btn 
+this project is from amirahmad adibi course.
+it`s a app you can play 6 sound with press btn. 
 
-in this app i use audioPlayers package 
+in this app i use audioPlayers package.
 https://pub.dev/packages/audioplayers
 
 picture of app 
